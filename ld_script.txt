@@ -336,6 +336,8 @@ SECTIONS {
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
         src/new_pokenav.o(.text);
+        src/music_selector.o(.text);
+        src/text_util.o(.text);
     } =0
 
     script_data :
@@ -697,6 +699,8 @@ SECTIONS {
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
         src/new_pokenav.o(.rodata);
+        src/music_selector.o(.rodata);
+        src/text_util.o(.rodata);
     } =0
 
     song_data :

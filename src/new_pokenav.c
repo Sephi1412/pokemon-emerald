@@ -31,6 +31,7 @@
 #include "region_map.h"
 #include "field_effect.h"
 #include "new_pokenav.h"
+#include "music_selector.h"
 
 /*
     To do:
