@@ -104,6 +104,7 @@ enum
 static const u8 gText_MainControlsDpad[] = _("{DPAD_NONE}Select");
 static const u8 gText_MainControlsAB[] = _("{A_BUTTON}Play Song  {B_BUTTON}Close");
 static const u8 gText_ActualPage[] = _("{L_BUTTON}Page ");
+static const u8 gText_RTriggerButton[] = _("{R_BUTTON}");
 static const u8 gText_TitleMusicSelector[] = _("Music  Selector");
 static const u8 gText_WildBattle[] = _("Wild Battle");
 static const u8 gText_BikeTheme[] = _("Bike Theme");
@@ -739,7 +740,7 @@ void Callback2_StartMusicSelector(void)
 static void printActualPage()
 {
     ConvertIntToDecimalStringN(gStringVar3, sMusicSelectorView->actualPage + 1, 2, 1);
-    StringCopy(gStringVar1, &gText_Time[0]);
+    StringCopy(gStringVar1, &gText_RTriggerButton[0]);
     StringCopy(gStringVar2, &gText_ActualPage[0]);
     StringAppend(gStringVar3, gStringVar1);
     StringAppend(gStringVar2, gStringVar3);

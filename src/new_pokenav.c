@@ -186,7 +186,7 @@ static void PrintControlsAndAppName(void);
 const struct NewPokenavIcon menuIcons[9] =
     {
         //.callback = OpenMusicSelector,
-        [0] = {.callback = CB2_OpenFlyMap},
+        [0] = {.callback = OpenMusicSelector},
         [1] = {.callback = CB2_OpenFlyMap},
         [2] = {.callback = CB2_OpenFlyMap},
         [3] = {.callback = CB2_OpenFlyMap},
