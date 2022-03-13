@@ -45,6 +45,8 @@
 #include "constants/songs.h"
 #include "union_room.h"
 #include "constants/rgb.h"
+#include "new_pokenav.h"
+
 
 // Menu actions
 enum
@@ -136,6 +138,9 @@ static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
 
+/* Extra */
+static bool8 StartMenuNewPokenavCallback(void);
+
 static const struct WindowTemplate sSafariBallsWindowTemplate = {0, 1, 1, 9, 4, 0xF, 8};
 
 static const u8* const sPyramidFloorNames[] =
@@ -161,7 +166,7 @@ static const struct MenuAction sStartMenuItems[] =
     {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
     {gText_MenuPlayer, {.u8_void = StartMenuPlayerNameCallback}},
     {gText_MenuSave, {.u8_void = StartMenuSaveCallback}},
-    {gText_MenuOption, {.u8_void = StartMenuOptionCallback}},
+    {gText_MenuOption, {.u8_void = StartMenuNewPokenavCallback}}, // {gText_MenuOption, {.u8_void = StartMenuOptionCallback}},
     {gText_MenuExit, {.u8_void = StartMenuExitCallback}},
     {gText_MenuRetire, {.u8_void = StartMenuSafariZoneRetireCallback}},
     {gText_MenuPlayer, {.u8_void = StartMenuLinkModePlayerNameCallback}},
@@ -1410,4 +1415,10 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 {
     list[*pos] = newEntry;
     (*pos)++;
+}
+
+static bool8 StartMenuNewPokenavCallback(void)
+{
+    CreateTask(Task_OpenPokeNavFromStartMenu, 0);
+    return TRUE;
 }
