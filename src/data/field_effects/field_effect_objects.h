@@ -1286,4 +1286,31 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
     .callback = UpdateRayquazaSpotlightEffect,
 };
 
+/* TODO */
+
+static const struct SpriteFrameImage sPicTable_Pelipper[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_Pelipper),
+};
+
+static const union AnimCmd sAnim_Pelipper[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_Pelipper[] =
+{
+    sAnim_Pelipper,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_Pelipper = {
+    .tileTag = TAG_NONE,
+    .paletteTag = 5526,
+    .oam = &gObjectEventBaseOam_32x32,
+    .anims = sAnimTable_Pelipper,
+    .images = sPicTable_Pelipper,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
 static const struct SpritePalette sSpritePalette_Unused = {gObjectEventPal_Npc3, FLDEFF_PAL_TAG_UNKNOWN};

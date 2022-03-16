@@ -48,7 +48,7 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Pelipper;
 ## src/data/field_effects/field_effect_objects.h
 - Aquí es donde definimos las características de los objetos/sprites referenciados en `field_effect_object_template_pointers.h`
 
-``` c
+``` C
 static const struct SpriteFrameImage sPicTable_Pelipper[] = {
     obj_frame_tiles(gFieldEffectObjectPic_Pelipper),
 };
